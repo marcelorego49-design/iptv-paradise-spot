@@ -23,7 +23,35 @@ npm run dev
 
 ## Built with
 
-- TanStack Start
+- TanStack Start (Nitro)
 - TypeScript
 - React
 - Tailwind CSS
+
+## Deployment
+
+This project uses TanStack Start, which is powered by [Nitro](https://nitro.unjs.io/). You can deploy it to various platforms by setting the `NITRO_PRESET` environment variable during the build process.
+
+### Cloudflare Pages
+
+1. Connect your repository to Cloudflare Pages.
+2. Set the build command to `npm run build`.
+3. Set the output directory to `.output/public`.
+4. Add an environment variable `NITRO_PRESET=cloudflare-pages`.
+
+### Vercel
+
+1. Connect your repository to Vercel.
+2. Vercel should auto-detect the configuration, but if needed:
+3. Set the build command to `npm run build`.
+4. Set the output directory to `.output/public`.
+5. Add an environment variable `NITRO_PRESET=vercel`.
+
+### Local Use
+
+To download and run this project on your notebook:
+1. Click the **Export** or **Download** button in the Lovable interface.
+2. Extract the ZIP file.
+3. Open your terminal in the project folder.
+4. Run `npm install` (or `bun install`).
+5. Run `npm run dev` to start the development server.
