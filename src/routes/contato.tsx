@@ -77,6 +77,24 @@ function ContatoPage() {
             </select>
           </div>
           <div className="space-y-2">
+            <Label htmlFor="screens">Quantidade de telas</Label>
+            <select
+              id="screens"
+              value={screens}
+              onChange={(e) => setScreens(e.target.value)}
+              className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
+            >
+              {[1, 2, 3, 4, 5].map((n) => (
+                <option key={n} value={n}>
+                  {n} {n === 1 ? "Tela" : "Telas"}
+                </option>
+              ))}
+            </select>
+            <p className="text-[10px] text-muted-foreground">
+              *Telas adicionais possuem descontos progressivos negociáveis.
+            </p>
+          </div>
+          <div className="space-y-2">
             <Label htmlFor="message">Mensagem</Label>
             <Textarea
               id="message"
