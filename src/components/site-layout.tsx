@@ -4,8 +4,8 @@ import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/logo.jpg.asset.json";
 
-export const WHATSAPP_URL =
-  "https://wa.me/5591991618878?text=Ol%C3%A1!%20Quero%20testar%20o%20Le%C3%A3o%20Play.";
+export const WHATSAPP_BASE_URL = "https://wa.me/5591991618878";
+export const WHATSAPP_URL = `${WHATSAPP_BASE_URL}?text=Ol%C3%A1!%20Quero%20testar%20o%20Le%C3%A3o%20Play.`;
 
 const navItems = [
   { to: "/", label: "Início" },

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Play, ShieldCheck, Zap, Smartphone, Clapperboard, Trophy, MessageCircle } from "lucide-react";
 import { SiteLayout, WHATSAPP_URL } from "@/components/site-layout";
 import { PlansGrid } from "@/components/plans";
+import { MultiDeviceConfig } from "@/components/multi-device-config";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -142,7 +143,19 @@ function Index() {
           A disponibilidade e funcionalidade dos aplicativos podem variar conforme a compatibilidade com o sistema do cliente.
         </p>
         <div className="mt-10">
-          <PlansGrid />
+        <PlansGrid />
+        
+        <div className="mt-20 flex justify-center">
+          <div className="w-full max-w-xl">
+            <div className="mb-8 text-center">
+              <h2 className="font-display text-3xl font-bold">Planos para a Família Toda</h2>
+              <p className="mt-2 text-muted-foreground">
+                Adicione mais telas e ganhe descontos progressivos por dispositivo extra.
+              </p>
+            </div>
+            <MultiDeviceConfig basePrice={25} planName="Mensal" />
+          </div>
+        </div>
         </div>
       </section>
 

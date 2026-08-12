@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { MessageCircle, Clock, Mail } from "lucide-react";
-import { SiteLayout, WHATSAPP_URL } from "@/components/site-layout";
+import { SiteLayout, WHATSAPP_BASE_URL, WHATSAPP_URL } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -29,10 +29,11 @@ export const Route = createFileRoute("/contato")({
 function ContatoPage() {
   const [name, setName] = useState("");
   const [plan, setPlan] = useState(plans[1]?.name ?? "Trimestral");
+  const [screens, setScreens] = useState("1");
   const [message, setMessage] = useState("");
 
   const text = encodeURIComponent(
-    `Olá! Meu nome é ${name || "(sem nome)"} e tenho interesse no plano ${plan}. ${message}`.trim(),
+    `Olá! Meu nome é ${name || "(sem nome)"}, tenho interesse no plano ${plan} para ${screens} ${screens === "1" ? "tela" : "telas"}. ${message}`.trim(),
   );
 
   return (
@@ -51,7 +52,7 @@ function ContatoPage() {
           className="glass-panel space-y-5 rounded-3xl p-7 shadow-soft"
           onSubmit={(e) => {
             e.preventDefault();
-            window.open(`${WHATSAPP_URL.split("?")[0]}?text=${text}`, "_blank", "noopener");
+            window.open(`${WHATSAPP_BASE_URL}?text=${text}`, "_blank", "noopener");
           }}
         >
           <div className="space-y-2">
@@ -74,6 +75,24 @@ function ContatoPage() {
               ))}
               <option value="Teste grátis">Quero apenas o teste grátis</option>
             </select>
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="screens">Quantidade de telas</Label>
+            <select
+              id="screens"
+              value={screens}
+              onChange={(e) => setScreens(e.target.value)}
+              className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
+            >
+              {[1, 2, 3, 4, 5].map((n) => (
+                <option key={n} value={n}>
+                  {n} {n === 1 ? "Tela" : "Telas"}
+                </option>
+              ))}
+            </select>
+            <p className="text-[10px] text-muted-foreground">
+              *Telas adicionais possuem descontos progressivos negociáveis.
+            </p>
           </div>
           <div className="space-y-2">
             <Label htmlFor="message">Mensagem</Label>
