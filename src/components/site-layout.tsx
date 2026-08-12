@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 
 export const WHATSAPP_URL =
-  "https://wa.me/5585999999999?text=Ol%C3%A1!%20Quero%20testar%20o%20FlowTV.";
+  "https://wa.me/5585999999999?text=Ol%C3%A1!%20Quero%20testar%20o%20Le%C3%A3o%20Play.";
 
 const navItems = [
   { to: "/", label: "Início" },
@@ -21,7 +21,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             <span className="flex size-9 items-center justify-center rounded-xl bg-brand-gradient text-primary-foreground">
               <Tv className="size-5" />
             </span>
-            FlowTV
+            Leão Play
           </Link>
           <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
             {navItems.map((item) => (
@@ -47,7 +47,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
       <footer className="border-t border-border bg-surface">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
-          <p className="font-display text-base font-semibold text-foreground">FlowTV</p>
+          <p className="font-display text-base font-semibold text-foreground">Leão Play</p>
           <nav className="flex gap-5">
             {navItems.map((item) => (
               <Link key={item.to} to={item.to} className="hover:text-foreground">
@@ -55,7 +55,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               </Link>
             ))}
           </nav>
-          <p>© {new Date().getFullYear()} FlowTV. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Leão Play. Todos os direitos reservados.</p>
         </div>
       </footer>
     </div>

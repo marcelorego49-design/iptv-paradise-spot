@@ -8,9 +8,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { plans } from "@/components/plans";
 
-const title = "Contato e teste grátis de IPTV | FlowTV";
+const title = "Contato e teste grátis de IPTV | Leão Play";
 const description =
-  "Fale com o FlowTV pelo WhatsApp, peça seu teste grátis de IPTV e receba o acesso em poucos minutos. Atendimento 24 horas.";
+  "Fale com o Leão Play pelo WhatsApp, peça seu teste grátis de IPTV e receba o acesso em poucos minutos. Atendimento 24 horas.";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
@@ -94,7 +94,7 @@ function ContatoPage() {
           {[
             { icon: MessageCircle, t: "WhatsApp", d: "(85) 99999-9999 — canal principal de atendimento e ativação." },
             { icon: Clock, t: "Horário", d: "Atendimento 24 horas, 7 dias por semana, inclusive feriados." },
-            { icon: Mail, t: "E-mail", d: "suporte@flowtv.com.br — para dúvidas administrativas." },
+            { icon: Mail, t: "E-mail", d: "suporte@leaoplay.com.br — para dúvidas administrativas." },
           ].map(({ icon: Icon, t, d }) => (
             <div key={t} className="rounded-2xl border border-border p-6">
               <span className="flex size-10 items-center justify-center rounded-xl bg-secondary text-primary">
