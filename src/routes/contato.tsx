@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { MessageCircle, Clock, Mail } from "lucide-react";
-import { SiteLayout, WHATSAPP_URL } from "@/components/site-layout";
+import { SiteLayout, WHATSAPP_BASE_URL, WHATSAPP_URL } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
