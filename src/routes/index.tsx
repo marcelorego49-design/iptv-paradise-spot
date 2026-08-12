@@ -142,7 +142,19 @@ function Index() {
           A disponibilidade e funcionalidade dos aplicativos podem variar conforme a compatibilidade com o sistema do cliente.
         </p>
         <div className="mt-10">
-          <PlansGrid />
+        <PlansGrid />
+        
+        <div className="mt-20 flex justify-center">
+          <div className="w-full max-w-xl">
+            <div className="mb-8 text-center">
+              <h2 className="font-display text-3xl font-bold">Planos para a Família Toda</h2>
+              <p className="mt-2 text-muted-foreground">
+                Adicione mais telas e ganhe descontos progressivos por dispositivo extra.
+              </p>
+            </div>
+            <MultiDeviceConfig basePrice={25} planName="Mensal" />
+          </div>
+        </div>
         </div>
       </section>
 

@@ -40,6 +40,18 @@ function PlanosPage() {
 
       <section className="mx-auto max-w-6xl px-4 py-16">
         <PlansGrid />
+
+        <div className="mt-20 flex flex-col items-center">
+          <div className="w-full max-w-xl">
+            <div className="mb-8 text-center">
+              <h2 className="font-display text-3xl font-bold">Precisa de mais telas?</h2>
+              <p className="mt-2 text-muted-foreground">
+                Configure o seu plano para múltiplos dispositivos com descontos exclusivos.
+              </p>
+            </div>
+            <MultiDeviceConfig basePrice={25} planName="Mensal" />
+          </div>
+        </div>
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {[
             ["Pix, cartão ou boleto", "Escolha a forma de pagamento mais confortável para você."],
