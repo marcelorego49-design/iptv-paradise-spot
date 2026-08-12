@@ -4,7 +4,7 @@ import { SiteLayout, WHATSAPP_URL } from "@/components/site-layout";
 import { PlansGrid } from "@/components/plans";
 import { Button } from "@/components/ui/button";
 
-const title = "Planos de IPTV a partir de R$ 29/mês | Leão Play";
+const title = "Planos de IPTV a partir de R$ 25/mês | Leão Play";
 const description =
   "Compare os planos de IPTV do Leão Play: telas simultâneas, canais 4K, filmes, séries e esportes. Sem fidelidade e com suporte 24h.";
 
