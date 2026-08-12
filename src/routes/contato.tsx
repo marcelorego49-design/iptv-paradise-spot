@@ -29,10 +29,11 @@ export const Route = createFileRoute("/contato")({
 function ContatoPage() {
   const [name, setName] = useState("");
   const [plan, setPlan] = useState(plans[1]?.name ?? "Trimestral");
+  const [screens, setScreens] = useState("1");
   const [message, setMessage] = useState("");
 
   const text = encodeURIComponent(
-    `Olá! Meu nome é ${name || "(sem nome)"} e tenho interesse no plano ${plan}. ${message}`.trim(),
+    `Olá! Meu nome é ${name || "(sem nome)"}, tenho interesse no plano ${plan} para ${screens} ${screens === "1" ? "tela" : "telas"}. ${message}`.trim(),
   );
 
   return (
