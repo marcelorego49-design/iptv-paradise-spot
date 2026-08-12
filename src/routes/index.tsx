@@ -11,9 +11,9 @@ import {
 } from "@/components/ui/accordion";
 import heroImg from "@/assets/hero-tv.jpg";
 
-const title = "Leão Play — IPTV estável com canais ao vivo, filmes e séries";
+const title = "Leão Play — Ecossistema de Entretenimento e Biblioteca de Apps";
 const description =
-  "Assine IPTV com mais de 8.000 canais, filmes, séries e esportes em 4K. Teste grátis, ativação em minutos e suporte 24h no WhatsApp.";
+  "A Leão Play é uma solução profissional multiplataforma com infraestrutura de servidores robusta e biblioteca de aplicativos para Smart TVs, celulares e notebooks.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,12 +30,12 @@ export const Route = createFileRoute("/")({
 });
 
 const features = [
-  { icon: Zap, title: "Alta disponibilidade", text: "Infraestrutura otimizada para transmissão fluida, minimizando interrupções mesmo nos horários de pico." },
-  { icon: Clapperboard, title: "Filmes e séries atualizados", text: "Catálogo on demand com lançamentos adicionados semanalmente." },
-  { icon: Trophy, title: "Todos os esportes", text: "Campeonatos nacionais, internacionais, PPV e canais fechados ao vivo." },
-  { icon: Smartphone, title: "Assista onde quiser", text: "Smart TV, TV Box, celular, tablet, computador e Fire Stick." },
-  { icon: ShieldCheck, title: "Ativação em minutos", text: "Você recebe seu acesso logo após a confirmação, com instalação assistida." },
-  { icon: MessageCircle, title: "Suporte humano 24h", text: "Atendimento real no WhatsApp, todos os dias, inclusive feriados." },
+  { icon: Zap, title: "Servidores Profissionais", text: "Infraestrutura global de alta performance para uma experiência fluida e estável em qualquer dispositivo." },
+  { icon: Clapperboard, title: "Biblioteca de Aplicativos", text: "Acesso a um ecossistema completo de softwares otimizados para cada sistema operacional." },
+  { icon: Trophy, title: "Conteúdo Premium", text: "Esportes ao vivo, canais exclusivos e um catálogo on-demand atualizado semanalmente." },
+  { icon: Smartphone, title: "Totalmente Multiplataforma", text: "Compatível com Smart TVs, smartphones (Android/iOS) e notebooks (Windows/macOS)." },
+  { icon: ShieldCheck, title: "Solução sob medida", text: "Instalação assistida e suporte técnico para configurar a melhor opção no seu aparelho." },
+  { icon: MessageCircle, title: "Suporte Especializado", text: "Atendimento humano 24h para garantir sua conectividade e satisfação total." },
 ];
 
 const steps = [
@@ -62,11 +62,11 @@ function Index() {
               <Play className="size-3 text-primary" /> Teste grátis liberado hoje
             </span>
             <h1 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] md:text-6xl">
-              Toda a TV do mundo <span className="text-brand-gradient">em uma só tela</span>
+              Sua central definitiva de <span className="text-brand-gradient">entretenimento digital</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-              Mais de 8.000 canais ao vivo, filmes, séries e esportes em 4K. Experiência fluida,
-              com ativação em minutos e suporte de verdade no WhatsApp.
+              Muito além de um app: a Leão Play oferece uma infraestrutura robusta de servidores e uma 
+              biblioteca completa de aplicativos para todos os seus dispositivos.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="bg-brand-gradient text-primary-foreground shadow-glow">
@@ -138,7 +138,9 @@ function Index() {
 
       <section className="mx-auto max-w-6xl px-4 py-20">
         <h2 className="font-display text-3xl font-bold md:text-4xl">Planos e preços</h2>
-        <p className="mt-3 text-muted-foreground">Sem fidelidade. Cancele quando quiser.</p>
+        <p className="mt-3 text-muted-foreground">
+          A disponibilidade e funcionalidade dos aplicativos podem variar conforme a compatibilidade com o sistema do cliente.
+        </p>
         <div className="mt-10">
           <PlansGrid />
         </div>
