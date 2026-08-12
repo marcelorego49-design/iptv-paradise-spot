@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
 });
 
 const features = [
-  { icon: Zap, title: "Servidor anti-travamento", text: "Infraestrutura otimizada para transmissão sem buffering, mesmo nos horários de pico." },
+  { icon: Zap, title: "Alta disponibilidade", text: "Infraestrutura otimizada para transmissão fluida, minimizando interrupções mesmo nos horários de pico." },
   { icon: Clapperboard, title: "Filmes e séries atualizados", text: "Catálogo on demand com lançamentos adicionados semanalmente." },
   { icon: Trophy, title: "Todos os esportes", text: "Campeonatos nacionais, internacionais, PPV e canais fechados ao vivo." },
   { icon: Smartphone, title: "Assista onde quiser", text: "Smart TV, TV Box, celular, tablet, computador e Fire Stick." },
@@ -65,7 +65,7 @@ function Index() {
               Toda a TV do mundo <span className="text-brand-gradient">em uma só tela</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-              Mais de 8.000 canais ao vivo, filmes, séries e esportes em 4K. Sem travamentos,
+              Mais de 8.000 canais ao vivo, filmes, séries e esportes em 4K. Experiência fluida,
               com ativação em minutos e suporte de verdade no WhatsApp.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -159,7 +159,7 @@ function Index() {
       <section className="mx-auto max-w-6xl px-4 pb-24">
         <div className="rounded-3xl bg-brand-gradient px-8 py-14 text-center text-primary-foreground shadow-glow">
           <h2 className="font-display text-3xl font-extrabold md:text-4xl">
-            Pronto para assistir sem travar?
+            Pronto para uma experiência estável?
           </h2>
           <p className="mx-auto mt-3 max-w-xl opacity-80">
             Peça seu teste grátis agora e comprove a qualidade em poucos minutos.

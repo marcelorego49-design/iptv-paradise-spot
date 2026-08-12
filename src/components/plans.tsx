@@ -27,7 +27,7 @@ export const plans = [
       "Canais 4K e Full HD",
       "Catálogo completo de filmes e séries",
       "Canais de esportes e PPV inclusos",
-      "Servidor anti-travamento",
+      "Alta disponibilidade",
       "Suporte prioritário 24h",
     ],
     highlighted: true,
