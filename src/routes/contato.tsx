@@ -28,7 +28,7 @@ export const Route = createFileRoute("/contato")({
 
 function ContatoPage() {
   const [name, setName] = useState("");
-  const [plan, setPlan] = useState(plans[1]?.name ?? "Família");
+  const [plan, setPlan] = useState(plans[1]?.name ?? "Trimestral");
   const [message, setMessage] = useState("");
 
   const text = encodeURIComponent(
