@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as PlanosRouteImport } from './routes/planos'
+import { Route as ApiPublicDownloadZipRouteImport } from './routes/api/public/download-zip'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,35 +29,44 @@ const PlanosRoute = PlanosRouteImport.update({
   path: '/planos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicDownloadZipRoute = ApiPublicDownloadZipRouteImport.update({
+  id: '/api/public/download-zip',
+  path: '/api/public/download-zip',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/planos': typeof PlanosRoute
+  '/api/public/download-zip': typeof ApiPublicDownloadZipRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/planos': typeof PlanosRoute
+  '/api/public/download-zip': typeof ApiPublicDownloadZipRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/planos': typeof PlanosRoute
+  '/api/public/download-zip': typeof ApiPublicDownloadZipRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contato' | '/planos'
+  fullPaths: '/' | '/contato' | '/planos' | '/api/public/download-zip'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contato' | '/planos'
-  id: '__root__' | '/' | '/contato' | '/planos'
+  to: '/' | '/contato' | '/planos' | '/api/public/download-zip'
+  id: '__root__' | '/' | '/contato' | '/planos' | '/api/public/download-zip'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContatoRoute: typeof ContatoRoute
   PlanosRoute: typeof PlanosRoute
+  ApiPublicDownloadZipRoute: typeof ApiPublicDownloadZipRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +92,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlanosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/download-zip': {
+      id: '/api/public/download-zip'
+      path: '/api/public/download-zip'
+      fullPath: '/api/public/download-zip'
+      preLoaderRoute: typeof ApiPublicDownloadZipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContatoRoute: ContatoRoute,
   PlanosRoute: PlanosRoute,
+  ApiPublicDownloadZipRoute: ApiPublicDownloadZipRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
