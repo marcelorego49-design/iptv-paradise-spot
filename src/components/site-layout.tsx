@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Tv, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
+import logoAsset from "@/assets/logo.jpg.asset.json";
 
 export const WHATSAPP_URL =
   "https://wa.me/5585999999999?text=Ol%C3%A1!%20Quero%20testar%20o%20Le%C3%A3o%20Play.";
@@ -18,9 +19,11 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-50 glass-panel border-x-0 border-t-0">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <Link to="/" className="flex items-center gap-2 font-display text-lg font-bold">
-            <span className="flex size-9 items-center justify-center rounded-xl bg-brand-gradient text-primary-foreground">
-              <Tv className="size-5" />
-            </span>
+            <img 
+              src={logoAsset.url} 
+              alt="Leão Play Logo" 
+              className="size-10 rounded-lg object-contain"
+            />
             Leão Play
           </Link>
           <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
@@ -47,7 +50,14 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
       <footer className="border-t border-border bg-surface">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
-          <p className="font-display text-base font-semibold text-foreground">Leão Play</p>
+          <div className="flex items-center gap-2">
+            <img 
+              src={logoAsset.url} 
+              alt="Leão Play Logo" 
+              className="size-8 rounded-md object-contain opacity-80"
+            />
+            <p className="font-display text-base font-semibold text-foreground">Leão Play</p>
+          </div>
           <nav className="flex gap-5">
             {navItems.map((item) => (
               <Link key={item.to} to={item.to} className="hover:text-foreground">
