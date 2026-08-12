@@ -52,7 +52,7 @@ function ContatoPage() {
           className="glass-panel space-y-5 rounded-3xl p-7 shadow-soft"
           onSubmit={(e) => {
             e.preventDefault();
-            window.open(`${WHATSAPP_URL.split("?")[0]}?text=${text}`, "_blank", "noopener");
+            window.open(`${WHATSAPP_BASE_URL}?text=${text}`, "_blank", "noopener");
           }}
         >
           <div className="space-y-2">
