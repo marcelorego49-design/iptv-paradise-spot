@@ -3,6 +3,7 @@ import { MessageCircle } from "lucide-react";
 import { SiteLayout, WHATSAPP_URL } from "@/components/site-layout";
 import { PlansGrid } from "@/components/plans";
 import { Button } from "@/components/ui/button";
+import { MultiDeviceConfig } from "@/components/multi-device-config";
 
 const title = "Planos de IPTV a partir de R$ 25/mês | Leão Play";
 const description =
