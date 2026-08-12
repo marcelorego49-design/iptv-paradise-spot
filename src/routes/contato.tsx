@@ -92,7 +92,7 @@ function ContatoPage() {
 
         <aside className="space-y-5">
           {[
-            { icon: MessageCircle, t: "WhatsApp", d: "(85) 99999-9999 — canal principal de atendimento e ativação." },
+            { icon: MessageCircle, t: "WhatsApp", d: "(91) 99161-8878 — canal principal de atendimento e ativação." },
             { icon: Clock, t: "Horário", d: "Atendimento 24 horas, 7 dias por semana, inclusive feriados." },
             { icon: Mail, t: "E-mail", d: "suporte@leaoplay.com.br — para dúvidas administrativas." },
           ].map(({ icon: Icon, t, d }) => (
