@@ -87,7 +87,7 @@ export function MultiDeviceConfig({ basePrice, planName }: MultiDeviceConfigProp
       <div className="px-2">
         <Slider 
           value={[screens]} 
-          onValueChange={(val) => setScreens(val[0])} 
+          onValueChange={(val) => setScreens(val[0] ?? 1)} 
           min={1} 
           max={5} 
           step={1} 
