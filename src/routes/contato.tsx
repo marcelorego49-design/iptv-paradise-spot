@@ -32,8 +32,21 @@ function ContatoPage() {
   const [screens, setScreens] = useState("1");
   const [message, setMessage] = useState("");
 
+  const calculatePrice = (numScreens: number) => {
+    const basePrice = 25;
+    if (numScreens <= 1) return basePrice;
+    if (numScreens === 2) return 45;
+    if (numScreens === 3) return 65;
+    if (numScreens === 4) return 80;
+    if (numScreens === 5) return 95;
+    return 95 + (numScreens - 5) * 15;
+  };
+
+  const totalPrice = calculatePrice(parseInt(screens));
+  const formattedPrice = totalPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
   const text = encodeURIComponent(
-    `Olá! Meu nome é ${name || "(sem nome)"}, tenho interesse no plano ${plan} para ${screens} ${screens === "1" ? "tela" : "telas"}. ${message}`.trim(),
+    `Olá! Meu nome é ${name || "(sem nome)"}, tenho interesse no plano ${plan} para ${screens} ${screens === "1" ? "tela" : "telas"}. Valor total: ${formattedPrice}. ${message}`.trim(),
   );
 
   return (
@@ -84,9 +97,9 @@ function ContatoPage() {
               onChange={(e) => setScreens(e.target.value)}
               className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
             >
-              {[1, 2, 3, 4, 5].map((n) => (
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
                 <option key={n} value={n}>
-                  {n} {n === 1 ? "Tela" : "Telas"}
+                  {n} {n === 1 ? "Tela" : "Telas"} — R$ {calculatePrice(n)},00
                 </option>
               ))}
             </select>

@@ -13,30 +13,34 @@ interface MultiDeviceConfigProps {
 export function MultiDeviceConfig({ basePrice, planName }: MultiDeviceConfigProps) {
   const [screens, setScreens] = useState(1);
   
-  // Lógica de precificação:
-  // 1ª tela: Plano Base
-  // Telas extras: R$ 15,00 cada
-  // Desconto negociável: A partir da 3ª tela (total), as telas extras custam R$ 10,00
+  // Lógica de precificação progressiva:
+  // 1 tela: R$ 25 (Base)
+  // 2 telas: R$ 45 (+R$ 20)
+  // 3 telas: R$ 65 (+R$ 20)
+  // 4 telas: R$ 80 (+R$ 15)
+  // 5 telas: R$ 95 (+R$ 15)
+  // 6+ telas: +R$ 15 por tela adicional
   const pricing = useMemo(() => {
-    const extraScreens = screens - 1;
-    let totalExtra = 0;
-    let savings = 0;
+    let totalPrice = basePrice; // Base 1 tela = 25
     
-    if (extraScreens > 0) {
-      for (let i = 1; i <= extraScreens; i++) {
-        // Se for a 3ª tela ou mais (total), aplica o desconto negociado de R$ 10 em vez de R$ 15
-        const currentScreenTotal = i + 1;
-        const screenCost = currentScreenTotal >= 3 ? 10 : 15;
-        totalExtra += screenCost;
-        savings += (15 - screenCost);
-      }
+    if (screens === 2) {
+      totalPrice = 45;
+    } else if (screens === 3) {
+      totalPrice = 65;
+    } else if (screens === 4) {
+      totalPrice = 80;
+    } else if (screens === 5) {
+      totalPrice = 95;
+    } else if (screens > 5) {
+      // 95 + (telas adicionais * 15)
+      totalPrice = 95 + (screens - 5) * 15;
     }
     
-    const totalPrice = basePrice + totalExtra;
+    const individualPrice = screens * basePrice;
+    const savings = individualPrice - totalPrice;
     
     return {
       totalPrice,
-      extraScreens,
       savings,
       hasDiscount: savings > 0
     };
@@ -76,8 +80,8 @@ export function MultiDeviceConfig({ basePrice, planName }: MultiDeviceConfigProp
             variant="outline" 
             size="icon" 
             className="size-8 rounded-full" 
-            onClick={() => setScreens(Math.min(5, screens + 1))}
-            disabled={screens >= 5}
+            onClick={() => setScreens(Math.min(10, screens + 1))}
+            disabled={screens >= 10}
           >
             <Plus className="size-3" />
           </Button>
@@ -89,13 +93,13 @@ export function MultiDeviceConfig({ basePrice, planName }: MultiDeviceConfigProp
           value={[screens]} 
           onValueChange={(val) => setScreens(val[0] ?? 1)} 
           min={1} 
-          max={5} 
+          max={10} 
           step={1} 
           className="py-2"
         />
         <div className="mt-1 flex justify-between text-[10px] text-muted-foreground uppercase tracking-wider font-medium">
           <span>1 Tela</span>
-          <span>5 Telas</span>
+          <span>10 Telas</span>
         </div>
       </div>
 
