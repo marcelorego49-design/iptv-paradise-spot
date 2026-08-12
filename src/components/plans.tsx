@@ -7,7 +7,7 @@ export const plans = [
     name: "Mensal",
     price: "R$ 25",
     period: "/mês",
-    description: "Ideal para ativação rápida e teste.",
+    description: "Servidor estável para sua primeira experiência digital.",
     features: [
       "Acesso completo",
       "Mais de 8.000 canais ao vivo",
@@ -21,7 +21,7 @@ export const plans = [
     name: "Trimestral",
     price: "R$ 75",
     period: "/3 meses",
-    description: "Leve 4 meses e pague 3! O melhor bônus.",
+    description: "Alta performance com bônus especial de 4 meses.",
     features: [
       "1 mês de bônus incluso",
       "Total de 4 meses de serviço",
@@ -36,7 +36,7 @@ export const plans = [
     name: "Anual",
     price: "R$ 200",
     period: "/ano",
-    description: "Melhor custo-benefício para o ano todo.",
+    description: "Infraestrutura completa para 12 meses de estabilidade.",
     features: [
       "Economia máxima",
       "12 meses garantidos",
