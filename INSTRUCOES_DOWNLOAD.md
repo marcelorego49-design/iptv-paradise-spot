@@ -4,19 +4,24 @@ Este projeto está configurado para facilitar o download e a implantação em se
 
 ## 📦 Como baixar o código completo (ZIP)
 
-Para baixar todos os arquivos do projeto de forma confiável, você pode usar a rota de download dedicada que criamos:
+Para garantir que você consiga baixar o projeto sem erros de servidor ou limites de rede, disponibilizamos dois métodos:
 
-1. **Acesse a URL de Download:**
-   - No ambiente de produção: `https://seu-dominio.com/api/public/download-zip`
-   - No ambiente de preview do Lovable: Adicione `/api/public/download-zip` ao final da URL do navegador.
+### Método 1: Download Direto (Recomendado)
+Acesse diretamente o arquivo estático no seu domínio:
+- **URL:** `https://seu-dominio.com/project.zip`
+- Este método é o mais rápido e confiável, pois é servido diretamente como um arquivo estático.
 
-Este método contorna limites de interface e garante que você receba o arquivo `project.zip` completo, contendo toda a estrutura necessária para rodar localmente ou subir para Cloudflare/Vercel.
+### Método 2: Rota de API (Fallback)
+Se o download direto falhar, tente a rota de API dedicada:
+- **URL:** `https://seu-dominio.com/api/public/download-zip`
+
+---
 
 ## 🚀 Guia de Implantação (Deployment)
 
-Para evitar os limites de "hospedagens gratuitas" tradicionais, recomendamos o uso de **Cloudflare Pages** ou **Vercel**, que oferecem camadas gratuitas extremamente robustas e rápidas.
+Recomendamos o uso de **Cloudflare Pages** ou **Vercel** para hospedar este projeto. Eles são gratuitos, rápidos e suportam perfeitamente o TanStack Start.
 
-### 1. Cloudflare Pages (Recomendado)
+### 1. Cloudflare Pages
 - **Comando de Build:** `npm run build`
 - **Diretório de Saída:** `.output/public`
 - **Variável de Ambiente:** `NITRO_PRESET=cloudflare-pages`
