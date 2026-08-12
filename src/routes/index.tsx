@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import heroImg from "@/assets/hero-tv.jpg";
 
-const title = "FlowTV — IPTV estável com canais ao vivo, filmes e séries";
+const title = "Leão Play — IPTV estável com canais ao vivo, filmes e séries";
 const description =
   "Assine IPTV com mais de 8.000 canais, filmes, séries e esportes em 4K. Teste grátis, ativação em minutos e suporte 24h no WhatsApp.";
 
@@ -94,7 +94,7 @@ function Index() {
           <div className="relative">
             <img
               src={heroImg}
-              alt="Smart TV exibindo a interface de canais e filmes do FlowTV em uma sala escura"
+              alt="Smart TV exibindo a interface de canais e filmes do Leão Play em uma sala escura"
               width={1536}
               height={1024}
               className="w-full rounded-3xl border border-border object-cover shadow-glow"
@@ -104,7 +104,7 @@ function Index() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-20">
-        <h2 className="font-display text-3xl font-bold md:text-4xl">Por que escolher o FlowTV</h2>
+        <h2 className="font-display text-3xl font-bold md:text-4xl">Por que escolher o Leão Play</h2>
         <p className="mt-3 max-w-2xl text-muted-foreground">
           Estrutura própria, catálogo atualizado e atendimento que responde de verdade.
         </p>

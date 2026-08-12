@@ -4,9 +4,9 @@ import { SiteLayout, WHATSAPP_URL } from "@/components/site-layout";
 import { PlansGrid } from "@/components/plans";
 import { Button } from "@/components/ui/button";
 
-const title = "Planos de IPTV a partir de R$ 29/mês | FlowTV";
+const title = "Planos de IPTV a partir de R$ 29/mês | Leão Play";
 const description =
-  "Compare os planos de IPTV do FlowTV: telas simultâneas, canais 4K, filmes, séries e esportes. Sem fidelidade e com suporte 24h.";
+  "Compare os planos de IPTV do Leão Play: telas simultâneas, canais 4K, filmes, séries e esportes. Sem fidelidade e com suporte 24h.";
 
 export const Route = createFileRoute("/planos")({
   head: () => ({
