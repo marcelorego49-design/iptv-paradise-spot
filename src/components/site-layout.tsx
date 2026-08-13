@@ -2,7 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
 import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/logo.jpg.asset.json";
+// O logotipo foi movido para public/logo.jpg para garantir compatibilidade com Cloudflare/Vercel
+const LOGO_URL = "/logo.jpg";
 
 export const WHATSAPP_BASE_URL = "https://wa.me/5591991618878";
 export const WHATSAPP_URL = `${WHATSAPP_BASE_URL}?text=Ol%C3%A1!%20Quero%20testar%20o%20Le%C3%A3o%20Play.`;
@@ -20,7 +21,8 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <Link to="/" className="flex items-center gap-2 font-display text-lg font-bold">
             <img 
-              src={logoAsset.url} 
+              src={LOGO_URL} 
+
               alt="Leão Play Logo" 
               className="size-10 rounded-lg object-contain"
             />
@@ -52,7 +54,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-2">
             <img 
-              src={logoAsset.url} 
+              src={LOGO_URL} 
               alt="Leão Play Logo" 
               className="size-8 rounded-md object-contain opacity-80"
             />
