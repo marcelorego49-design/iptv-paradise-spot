@@ -1,20 +1,40 @@
-# Plano de Integração Automática com GitHub
+# Plano de Correção: Download Automático do ZIP
 
-Para que o site no Cloudflare Pages seja atualizado automaticamente sem que você precise baixar e subir arquivos ZIP, vamos configurar a integração com o seu repositório GitHub.
+O usuário reportou que, ao clicar no botão de download, uma nova aba abre com a mensagem "Not Found". O objetivo é garantir que o download ocorra de forma automática e direta, sem abrir abas vazias ou falhar.
 
-## Etapas de Implementação
+## Alterações
 
-### 1. Conexão do Projeto
-* Solicitar a conexão da sua conta GitHub com este projeto usando a ferramenta de conectores do Lovable.
-* Isso permitirá que o projeto tenha permissão para interagir com seus repositórios.
+### Componentes de Interface
+- **Botão de Download no Rodapé (`src/components/site-layout.tsx`)**
+    - Substituir o link `<a>` tradicional por um botão que dispara uma função JavaScript.
+    - A função usará `fetch` para buscar o arquivo como um `Blob` e criar um link temporário com `URL.createObjectURL` para disparar o download. Isso ignora completamente qualquer interceptação do roteador e garante que o navegador trate o arquivo como um download, não como uma navegação.
 
-### 2. Configuração do Repositório
-* Após a conexão, precisaremos do nome do repositório (ex: `usuario/leao-play`).
-* Vou explicar como configurar o "GitHub Sync" nativo do Lovable ou, se preferir, como posso fazer os envios de código diretamente.
-
-### 3. Sincronização com Cloudflare
-* Como você já usa o Cloudflare Pages conectado ao GitHub, qualquer mudança enviada ao repositório disparará o deploy automático no Cloudflare.
+### Processo de Empacotamento
+- **Atualização dos Arquivos ZIP**
+    - Rodar o comando de geração do ZIP para garantir que o arquivo `public/project-essential.zip` exista e esteja atualizado.
 
 ## Detalhes Técnicos
-* Usaremos o conector `github` do sistema.
-* Não serão armazenadas senhas, apenas o token de acesso seguro via OAuth.
+- O problema "Not Found" geralmente ocorre porque o `tanstack-router` tenta processar o link `/project-essential.zip` como uma rota interna em vez de permitir que o navegador trate-o como um arquivo estático.
+- Ao usar `fetch` + `Blob`, forçamos o download programaticamente.
+- O código da função de download será:
+```typescript
+const handleDownload = async (e: React.MouseEvent) => {
+  e.preventDefault();
+  try {
+    const response = await fetch('/project-essential.zip');
+    if (!response.ok) throw new Error('Falha ao baixar');
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'leao-play-essencial.zip';
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+  } catch (err) {
+    console.error(err);
+    window.location.href = '/project-essential.zip'; // Fallback
+  }
+};
+```
