@@ -74,8 +74,8 @@
   --destructive-foreground: oklch(0.98 0.01 240);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 16%);
-  --ring: oklch(0.63 0.23 25);
-  --chart-1: oklch(0.63 0.23 25);
+  --ring: oklch(0.75 0.16 85);
+  --chart-1: oklch(0.75 0.16 85);
   --chart-2: oklch(0.7 0.17 162);
   --chart-3: oklch(0.82 0.17 90);
   --chart-4: oklch(0.63 0.2 300);
