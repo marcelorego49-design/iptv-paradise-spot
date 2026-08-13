@@ -67,8 +67,8 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           </nav>
           <p>© {new Date().getFullYear()} Leão Play. Todos os direitos reservados.</p>
           <a 
-            href="/project.zip" 
-            download="leao-play-projeto.zip"
+            href="/project-essential.zip" 
+            download="leao-play-essencial.zip"
             className="text-[10px] opacity-20 hover:opacity-100 transition-opacity"
             title="Download direto do código fonte (ZIP)"
           >
