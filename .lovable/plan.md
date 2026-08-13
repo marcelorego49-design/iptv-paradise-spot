@@ -1,22 +1,21 @@
-# Plano: Correção do Erro "Not Found" no Download
+# Plano de Correção: Download do Projeto (Not Found)
 
-O usuário relatou que ao clicar no botão de download, uma nova guia abre com a mensagem "Not Found". Isso ocorre porque o link não está disparando o download corretamente ou a rota está sendo interceptada pelo roteador do lado do cliente.
+O problema de "Not Found" ao tentar baixar o arquivo ZIP ocorre porque o TanStack Router tenta interceptar a navegação para `/project-essential.zip` como se fosse uma rota interna da aplicação. Para resolver isso de forma definitiva, vamos forçar o navegador a tratar o link como um download externo, ignorando o roteamento do React.
 
-## Causa Provável
-O arquivo `public/project.zip` pode não estar sendo servido corretamente em tempo real no ambiente de desenvolvimento/preview, ou o atributo `download` não é suficiente para impedir que o navegador tente abrir o arquivo como uma página se ele não identificar o cabeçalho `Content-Type` corretamente.
+## Mudanças propostas
 
-## Alterações Propostas
+### Componentes
 
-### 1. Forçar o Download via JavaScript
-Em vez de um link `<a>` direto com `href`, usaremos uma função que faz o `fetch` do arquivo, converte para Blob e dispara o download programaticamente. Isso garante que o navegador trate o arquivo como um download e não tente navegar para a URL.
+#### `src/components/site-layout.tsx`
+- Adicionar um atributo `target="_self"` e garantir que o atributo `download` esteja presente.
+- Se o problema persistir, implementar uma função de download via JavaScript (`window.location.assign`) para garantir que o navegador dispare o download direto sem passar pelo roteador.
 
-### 2. Melhorar a Rota de API
-Garantir que a rota de API em `src/routes/api/public/download-zip.tsx` tenha os cabeçalhos de download (`Content-Disposition: attachment`) configurados de forma mais agressiva para forçar o comportamento do navegador.
+### Backend / API
 
-### 3. Atualizar o Componente de Layout
-Modificar o ícone de download no `src/components/site-layout.tsx` para usar um botão que dispara a lógica de download robusta, evitando a navegação.
+#### `src/routes/api/public/download-zip.tsx` (Opcional/Limpeza)
+- Manter o arquivo mas garantir que ele aponte para o arquivo correto se for usado, embora a solução estática seja preferível para performance e simplicidade em Vercel/Cloudflare.
 
-## Detalhes Técnicos
-- Usar `window.URL.createObjectURL` para criar um link temporário após o fetch.
-- Adicionar cabeçalhos de `Cache-Control: no-cache` para evitar versões corrompidas do ZIP.
-- Manter o fallback para a rota de API caso o arquivo estático falhe.
+## Passos de verificação
+1. Clicar no ícone 📦 no rodapé.
+2. Confirmar que o download do arquivo `leao-play-essencial.zip` inicia automaticamente sem abrir uma página de "Not Found".
+3. Verificar se o arquivo baixado contém as pastas `src`, `public` e os arquivos de configuração essenciais.
