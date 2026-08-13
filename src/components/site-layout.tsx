@@ -75,10 +75,11 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               // Previne interceptação do TanStack Router e força download nativo
               e.stopPropagation();
             }}
-            className="text-[10px] opacity-20 hover:opacity-100 transition-opacity"
+            className="flex items-center gap-1.5 font-medium text-muted-foreground transition-colors hover:text-primary"
             title="Download direto do código fonte (ZIP)"
           >
-            📦
+            <span className="text-xs">Baixar Código Fonte (ZIP)</span>
+            <span className="text-base">📦</span>
           </a>
         </div>
       </footer>
