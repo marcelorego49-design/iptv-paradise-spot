@@ -6,10 +6,10 @@ Este projeto está configurado para facilitar o download e a implantação em se
 
 Para garantir que você consiga baixar o projeto sem erros de servidor ou limites de rede, disponibilizamos dois métodos:
 
-### Método 1: Download Direto (Recomendado)
-Acesse diretamente o arquivo estático no seu domínio:
-- **URL:** `https://seu-dominio.com/project.zip`
-- Este método é o mais rápido e confiável, pois é servido diretamente como um arquivo estático.
+### Método 1: Download Direto (Versão Essencial)
+Acesse diretamente o arquivo estático com apenas o necessário para o build:
+- **URL:** `https://seu-dominio.com/project-essential.zip`
+- Este arquivo contém apenas `src`, `public` e as configurações básicas para subir no Vercel/Cloudflare.
 
 ### Método 2: Rota de API (Fallback)
 Se o download direto falhar, tente a rota de API dedicada:
