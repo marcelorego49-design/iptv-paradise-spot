@@ -68,21 +68,34 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             ))}
           </nav>
           <p>© {new Date().getFullYear()} Leão Play. Todos os direitos reservados.</p>
-          <a 
-            href="/project-essential.zip" 
-            download="leao-play-essencial.zip"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => {
-              // Previne interceptação do TanStack Router e força download nativo
-              e.stopPropagation();
+          <button 
+            onClick={async (e) => {
+              e.preventDefault();
+              try {
+                const response = await fetch('/project-essential.zip');
+                if (!response.ok) throw new Error('Falha ao baixar');
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'leao-play-essencial.zip';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+              } catch (err) {
+                console.error('Erro no download:', err);
+                // Fallback em caso de erro extremo
+                window.location.href = '/project-essential.zip';
+              }
             }}
-            className="flex items-center gap-1.5 font-medium text-muted-foreground transition-colors hover:text-primary"
+            className="flex items-center gap-1.5 font-medium text-muted-foreground transition-colors hover:text-primary cursor-pointer border-none bg-transparent p-0"
             title="Download direto do código fonte (ZIP)"
           >
             <span className="text-xs">Baixar Código Fonte (ZIP)</span>
             <span className="text-base">📦</span>
-          </a>
+          </button>
         </div>
       </footer>
     </div>
