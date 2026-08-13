@@ -69,6 +69,12 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           <a 
             href="/project-essential.zip" 
             download="leao-play-essencial.zip"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => {
+              // Previne interceptação do TanStack Router e força download nativo
+              e.stopPropagation();
+            }}
             className="text-[10px] opacity-20 hover:opacity-100 transition-opacity"
             title="Download direto do código fonte (ZIP)"
           >
