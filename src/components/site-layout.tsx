@@ -69,26 +69,9 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           </nav>
           <p>© {new Date().getFullYear()} Leão Play. Todos os direitos reservados.</p>
           <button 
-            onClick={async (e) => {
-              e.preventDefault();
-              try {
-                const response = await fetch('/project-essential.zip');
-                if (!response.ok) throw new Error('Falha ao baixar');
-                const blob = await response.blob();
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.style.display = 'none';
-                a.href = url;
-                a.download = 'leao-play-essencial.zip';
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-                document.body.removeChild(a);
-              } catch (err) {
-                console.error('Erro no download:', err);
-                // Fallback em caso de erro extremo
-                window.location.href = '/project-essential.zip';
-              }
+            onClick={() => {
+              // Força o download via rota de API que retorna os headers corretos
+              window.location.href = '/api/public/download-zip';
             }}
             className="flex items-center gap-1.5 font-medium text-muted-foreground transition-colors hover:text-primary cursor-pointer border-none bg-transparent p-0"
             title="Download direto do código fonte (ZIP)"
