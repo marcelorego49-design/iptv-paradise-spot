@@ -81,9 +81,9 @@ function Index() {
             </div>
             <dl className="mt-10 grid max-w-md grid-cols-3 gap-4">
               {[
-                ["8.000+", "Canais ao vivo"],
+                ["1500+", "Canais ao vivo"],
                 ["40 mil", "Filmes e séries"],
-                ["99,9%", "Estabilidade"],
+                ["90%", "de estabilidade"],
               ].map(([v, l]) => (
                 <div key={l}>
                   <dt className="font-display text-2xl font-bold text-foreground">{v}</dt>
