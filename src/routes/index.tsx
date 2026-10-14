@@ -57,8 +57,8 @@ function Index() {
   return (
     <SiteLayout>
       <section className="relative overflow-hidden bg-hero-gradient">
-        <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 lg:grid-cols-2 lg:items-center lg:py-28">
-          <div className="order-1">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:gap-10 lg:grid-cols-2 lg:items-center lg:gap-12 lg:py-28">
+          <div className="order-1 min-w-0">
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs font-semibold text-muted-foreground">
               <Play className="size-3 text-primary" /> Teste grátis liberado hoje
             </span>
@@ -92,7 +92,7 @@ function Index() {
               ))}
             </dl>
           </div>
-          <div className="relative order-2">
+          <div className="relative order-2 min-w-0">
             <img
               src={heroImg}
               alt="Smart TV exibindo a interface de canais e filmes do Leão Play em uma sala escura"
