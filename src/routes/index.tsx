@@ -63,7 +63,7 @@ function Index() {
               <Play className="size-3 text-primary" /> Teste grátis liberado hoje
             </span>
           </div>
-          <h1 className="col-start-1 row-start-2 mt-5 min-w-0 self-center font-display text-[1.35rem] font-extrabold leading-[1.1] sm:text-4xl md:text-5xl lg:row-start-2 lg:text-6xl lg:leading-[1.05]">
+          <h1 className="col-start-1 row-start-2 mt-5 min-w-0 self-center font-display text-[1.35rem] font-extrabold leading-[1.1] sm:text-3xl md:text-4xl lg:row-start-2 lg:text-6xl lg:leading-[1.05]">
             Seu entretenimento, do seu jeito.
           </h1>
           <div className="col-start-2 row-start-2 mt-5 flex min-w-0 items-center justify-center self-center lg:row-span-4 lg:row-start-1 lg:mt-0">
