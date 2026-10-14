@@ -57,7 +57,7 @@ function Index() {
   return (
     <SiteLayout>
       <section className="relative overflow-hidden bg-hero-gradient">
-        <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 md:grid-cols-2 md:items-center md:py-28">
+        <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 lg:grid-cols-2 lg:items-center lg:py-28">
           <div className="order-1">
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs font-semibold text-muted-foreground">
               <Play className="size-3 text-primary" /> Teste grátis liberado hoje
