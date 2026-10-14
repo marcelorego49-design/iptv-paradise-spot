@@ -104,7 +104,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               </Link>
             ))}
           </nav>
-          <p>© {new Date().getFullYear()} Leão Play. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Leão Play. Todos os direitos reservados:</p>
           <button 
             onClick={handleDownload}
             disabled={isDownloading}
