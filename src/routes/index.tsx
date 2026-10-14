@@ -115,15 +115,16 @@ function Index() {
                       ["HBO Max", "hbomax"],
                       ["Globoplay", "globoplay"],
                       ["Telecine", "telecine"],
-                      ["Apple TV+", "appletvplus"],
+                      ["Apple TV", "appletv"],
                       ["Paramount+", "paramountplus"],
                     ].map(([name, brand]) => (
                       <img
                         key={brand}
                         className="streaming-brands__logo"
-                        src={`https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${brand}.svg`}
+                        src={`/brands/${brand}.jpg`}
                         alt={copy === 0 ? name : ""}
                         loading="lazy"
+                        decoding="async"
                       />
                     ))}
                   </div>
