@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { plans } from "@/components/plans";
+import { trackContact } from "@/lib/meta-pixel";
 
 const title = "Contato e teste grátis de IPTV | Leão Play";
 const description =
@@ -65,6 +66,7 @@ function ContatoPage() {
           className="glass-panel space-y-5 rounded-3xl p-7 shadow-soft"
           onSubmit={(e) => {
             e.preventDefault();
+            trackContact();
             window.open(`${WHATSAPP_BASE_URL}?text=${text}`, "_blank", "noopener");
           }}
         >

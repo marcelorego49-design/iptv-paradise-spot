@@ -13,6 +13,7 @@ import { Toaster } from "@/components/ui/sonner";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { initMetaPixel, trackPageView, trackContact, isWhatsAppUrl } from "../lib/meta-pixel";
 
 function NotFoundComponent() {
   return (
@@ -123,8 +124,33 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+function useMetaPixel() {
+  const router = useRouter();
+  useEffect(() => {
+    void initMetaPixel();
+    let lastPath = window.location.pathname + window.location.search;
+    const unsub = router.subscribe("onResolved", () => {
+      const path = window.location.pathname + window.location.search;
+      if (path === lastPath) return;
+      lastPath = path;
+      trackPageView();
+    });
+    const onClick = (e: MouseEvent) => {
+      const a = (e.target as Element | null)?.closest?.("a[href]");
+      if (a && isWhatsAppUrl(a.getAttribute("href") ?? "")) trackContact();
+    };
+    document.addEventListener("click", onClick, true);
+    return () => {
+      unsub();
+      document.removeEventListener("click", onClick, true);
+    };
+  }, [router]);
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useMetaPixel();
+
 
   return (
     <QueryClientProvider client={queryClient}>
