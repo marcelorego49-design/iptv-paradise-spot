@@ -171,3 +171,45 @@ iframe[src*="lovable.dev"] {
   position: absolute !important;
   z-index: -9999 !important;
 }
+
+.streaming-brands {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.streaming-brands__viewport {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+.streaming-brands__track {
+  display: flex;
+  width: max-content;
+  animation: streaming-brands-scroll 48s linear infinite;
+}
+
+.streaming-brands__group {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding-right: clamp(1.5rem, 4vw, 3rem);
+}
+
+.streaming-brands__logo {
+  width: clamp(3.5rem, 7vw, 5rem);
+  height: 2rem;
+  flex: none;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+@keyframes streaming-brands-scroll {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .streaming-brands__track { animation: none; }
+}

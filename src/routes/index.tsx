@@ -103,6 +103,35 @@ function Index() {
               </div>
             ))}
           </dl>
+          <div className="streaming-brands col-span-2 mt-7 min-w-0 lg:col-span-1 lg:col-start-1 lg:row-start-5" aria-label="Plataformas disponíveis no catálogo">
+            <div className="streaming-brands__viewport">
+              <div className="streaming-brands__track">
+                {[0, 1].map((copy) => (
+                  <div className="streaming-brands__group" key={copy} aria-hidden={copy === 1}>
+                    {[
+                      ["Netflix", "netflix"],
+                      ["Prime Video", "primevideo"],
+                      ["Disney+", "disneyplus"],
+                      ["HBO Max", "hbomax"],
+                      ["Globoplay", "globoplay"],
+                      ["Telecine", "telecine"],
+                      ["Apple TV+", "appletvplus"],
+                      ["Paramount+", "paramountplus"],
+                    ].map(([name, brand]) => (
+                      <img
+                        key={brand}
+                        className="streaming-brands__logo"
+                        src={`https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${brand}.svg`}
+                        alt={copy === 0 ? name : ""}
+                        loading="lazy"
+                      />
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <p className="mt-3 text-center text-xs text-muted-foreground">Streamings disponíveis no catálogo</p>
+          </div>
         </div>
       </section>
 
