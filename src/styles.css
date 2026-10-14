@@ -201,7 +201,6 @@ iframe[src*="lovable.dev"] {
 .streaming-brands__logo {
   height: clamp(2.75rem, 6vw, 3.5rem);
   width: auto;
-  aspect-ratio: 16 / 9;
   flex: none;
   object-fit: contain;
   border-radius: 0.5rem;
