@@ -57,14 +57,25 @@ function Index() {
   return (
     <SiteLayout>
       <section className="relative overflow-hidden bg-hero-gradient">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:gap-10 lg:grid-cols-2 lg:items-center lg:gap-12 lg:py-28">
-          <div className="order-1 min-w-0">
+        <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] gap-x-4 px-4 py-16 sm:gap-x-6 lg:grid-cols-2 lg:gap-x-12 lg:py-28">
+          <div className="col-span-2 lg:col-span-1 lg:col-start-1 lg:row-start-1">
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs font-semibold text-muted-foreground">
               <Play className="size-3 text-primary" /> Teste grátis liberado hoje
             </span>
-            <h1 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] md:text-6xl">
-              Seu entretenimento,<br />do seu jeito.
-            </h1>
+          </div>
+          <h1 className="col-start-1 row-start-2 mt-5 min-w-0 self-center font-display text-[1.35rem] font-extrabold leading-[1.1] sm:text-3xl md:text-4xl lg:row-start-2 lg:text-6xl lg:leading-[1.05]">
+            Seu entretenimento, do seu jeito.
+          </h1>
+          <div className="col-start-2 row-start-2 mt-5 flex min-w-0 items-center justify-center self-center lg:row-span-4 lg:row-start-1 lg:mt-0">
+            <img
+              src={heroImg}
+              alt="Smart TV exibindo a interface do Leão Play em uma sala escura com iluminação vermelha"
+              width={1280}
+              height={720}
+              className="aspect-video h-auto w-full max-w-3xl rounded-xl border border-border object-cover shadow-glow sm:rounded-2xl lg:rounded-3xl"
+            />
+          </div>
+          <div className="col-span-2 min-w-0 lg:col-span-1 lg:col-start-1 lg:row-start-3">
             <p className="mt-5 max-w-xl text-lg text-muted-foreground">
               Muito além de um app: a Leão Play oferece uma infraestrutura robusta de servidores e uma 
               biblioteca completa de aplicativos para todos os seus dispositivos.
@@ -79,28 +90,19 @@ function Index() {
                 <Link to="/planos">Ver planos</Link>
               </Button>
             </div>
-            <dl className="mt-10 grid max-w-md grid-cols-3 gap-4">
-              {[
-                ["1500+", "Canais ao vivo"],
-                ["40 mil", "Filmes e séries"],
-                ["90%", "de estabilidade"],
-              ].map(([v, l]) => (
-                <div key={l}>
-                  <dt className="font-display text-2xl font-bold text-foreground">{v}</dt>
-                  <dd className="text-xs text-muted-foreground">{l}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
-          <div className="relative order-2 flex min-w-0 items-center justify-center">
-            <img
-              src={heroImg}
-              alt="Smart TV exibindo a interface do Leão Play em uma sala escura com iluminação vermelha"
-              width={1280}
-              height={720}
-              className="h-auto w-full max-w-3xl rounded-3xl border border-border object-contain shadow-glow"
-            />
-          </div>
+          <dl className="col-span-2 mt-10 grid max-w-md grid-cols-3 gap-4 lg:col-span-1 lg:col-start-1 lg:row-start-4">
+            {[
+              ["1500+", "Canais ao vivo"],
+              ["40 mil", "Filmes e séries"],
+              ["90%", "de estabilidade"],
+            ].map(([v, l]) => (
+              <div key={l}>
+                <dt className="font-display text-2xl font-bold text-foreground">{v}</dt>
+                <dd className="text-xs text-muted-foreground">{l}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
