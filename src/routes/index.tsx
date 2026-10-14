@@ -92,13 +92,13 @@ function Index() {
               ))}
             </dl>
           </div>
-          <div className="relative order-2 min-w-0 flex items-center">
+          <div className="relative order-2 flex min-w-0 items-center justify-center">
             <img
               src={heroImg}
-              alt="Smart TV exibindo a interface de canais e filmes do Leão Play em uma sala escura"
-              width={1536}
-              height={1024}
-              className="h-auto w-full rounded-3xl border border-border object-contain shadow-glow"
+              alt="Smart TV exibindo a interface do Leão Play em uma sala escura com iluminação vermelha"
+              width={1280}
+              height={720}
+              className="h-auto w-full max-w-3xl rounded-3xl border border-border object-contain shadow-glow"
             />
           </div>
         </div>
