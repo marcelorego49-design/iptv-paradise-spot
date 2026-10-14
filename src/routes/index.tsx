@@ -63,7 +63,7 @@ function Index() {
               <Play className="size-3 text-primary" /> Teste grátis liberado hoje
             </span>
             <h1 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] md:text-6xl">
-              Seu entretenimento, do seu jeito.
+              Seu entretenimento,<br />do seu jeito.
             </h1>
             <p className="mt-5 max-w-xl text-lg text-muted-foreground">
               Muito além de um app: a Leão Play oferece uma infraestrutura robusta de servidores e uma 
