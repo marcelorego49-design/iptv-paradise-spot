@@ -1,9 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { MessageCircle, Loader2 } from "lucide-react";
-import { type ReactNode, useState } from "react";
+import { MessageCircle } from "lucide-react";
+import { type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
-import { getProjectZip } from "@/lib/download.functions";
-import { toast } from "sonner";
 // O logotipo foi movido para public/logo.jpg para garantir compatibilidade com Cloudflare/Vercel
 const LOGO_URL = "/logo.jpg";
 
@@ -17,41 +15,6 @@ const navItems = [
 ] as const;
 
 export function SiteLayout({ children }: { children: ReactNode }) {
-  const [isDownloading, setIsDownloading] = useState(false);
-
-  const handleDownload = async () => {
-    setIsDownloading(true);
-    try {
-      const data = await getProjectZip();
-      
-      // Converte Base64 de volta para Blob no cliente
-      const byteCharacters = atob(data.base64);
-      const byteNumbers = new Array(byteCharacters.length);
-      for (let i = 0; i < byteCharacters.length; i++) {
-        byteNumbers[i] = byteCharacters.charCodeAt(i);
-      }
-      const byteArray = new Uint8Array(byteNumbers);
-      const blob = new Blob([byteArray], { type: data.contentType });
-      
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.style.display = 'none';
-      a.href = url;
-      a.download = data.filename;
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
-      document.body.removeChild(a);
-      
-      toast.success("Download iniciado com sucesso!");
-    } catch (error) {
-      console.error("Erro no download:", error);
-      toast.error("Erro ao processar o download. Tente novamente.");
-    } finally {
-      setIsDownloading(false);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-50 glass-panel border-x-0 border-t-0">
@@ -104,20 +67,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               </Link>
             ))}
           </nav>
-          <p>© {new Date().getFullYear()} Leão Play. Todos os direitos reservados:</p>
-          <button 
-            onClick={handleDownload}
-            disabled={isDownloading}
-            className="flex items-center gap-1.5 font-medium text-muted-foreground transition-colors hover:text-primary cursor-pointer border-none bg-transparent p-0 disabled:opacity-50"
-            title="Download direto do código fonte (ZIP)"
-          >
-            {isDownloading ? (
-              <Loader2 className="size-3 animate-spin" />
-            ) : (
-              <span className="text-xs">Baixar Código Fonte (ZIP)</span>
-            )}
-            <span className="text-base">📦</span>
-          </button>
+          <p>© {new Date().getFullYear()} Leão Play. Todos os direitos reservados.</p>
         </div>
       </footer>
     </div>

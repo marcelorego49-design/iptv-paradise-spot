@@ -31,12 +31,9 @@ export const Route = createFileRoute("/")({
 });
 
 const features = [
-  { icon: Zap, title: "Servidores Profissionais", text: "Infraestrutura global de alta performance para uma experiência fluida e estável em qualquer dispositivo." },
-  { icon: Clapperboard, title: "Biblioteca de Aplicativos", text: "Acesso a um ecossistema completo de softwares otimizados para cada sistema operacional." },
-  { icon: Trophy, title: "Conteúdo Premium", text: "Esportes ao vivo, canais exclusivos e um catálogo on-demand atualizado semanalmente." },
-  { icon: Smartphone, title: "Totalmente Multiplataforma", text: "Compatível com Smart TVs, smartphones (Android/iOS) e notebooks (Windows/macOS)." },
-  { icon: ShieldCheck, title: "Solução sob medida", text: "Instalação assistida e suporte técnico para configurar a melhor opção no seu aparelho." },
-  { icon: MessageCircle, title: "Suporte Especializado", text: "Atendimento humano 24h para garantir sua conectividade e satisfação total." },
+  { icon: Clapperboard, title: "Entretenimento organizado", text: "Canais ao vivo, filmes e séries, conforme a opção disponível." },
+  { icon: Smartphone, title: "Diferentes dispositivos", text: "Alternativas de aplicativos para aparelhos compatíveis." },
+  { icon: MessageCircle, title: "Atendimento personalizado", text: "Orientação para escolher a opção adequada e começar a utilizar." },
 ];
 
 const steps = [
@@ -77,8 +74,7 @@ function Index() {
           </div>
           <div className="col-span-2 min-w-0 lg:col-span-1 lg:col-start-1 lg:row-start-3">
             <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-              Muito além de um app: a Leão Play oferece uma infraestrutura robusta de servidores e uma 
-              biblioteca completa de aplicativos para todos os seus dispositivos.
+              Canais ao vivo, filmes e séries em aplicativos para diferentes dispositivos. Conheça as opções da Leão Play e conte com nosso atendimento para começar.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="bg-brand-gradient text-primary-foreground shadow-glow">
@@ -91,18 +87,6 @@ function Index() {
               </Button>
             </div>
           </div>
-          <dl className="col-span-2 mt-10 grid max-w-md grid-cols-3 gap-4 lg:col-span-1 lg:col-start-1 lg:row-start-4">
-            {[
-              ["1500+", "Canais ao vivo"],
-              ["40 mil", "Filmes e séries"],
-              ["90%", "de estabilidade"],
-            ].map(([v, l]) => (
-              <div key={l}>
-                <dt className="font-display text-2xl font-bold text-foreground">{v}</dt>
-                <dd className="text-xs text-muted-foreground">{l}</dd>
-              </div>
-            ))}
-          </dl>
           <div className="streaming-brands col-span-2 mt-7 min-w-0 lg:col-span-1 lg:col-start-1 lg:row-start-5" aria-label="Plataformas disponíveis no catálogo">
             <div className="streaming-brands__viewport">
               <div className="streaming-brands__track">

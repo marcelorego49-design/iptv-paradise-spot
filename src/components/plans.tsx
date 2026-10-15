@@ -1,70 +1,18 @@
-import { Check, Sparkles } from "lucide-react";
+import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { WHATSAPP_URL } from "@/components/site-layout";
+import { WHATSAPP_BASE_URL } from "@/components/site-layout";
 
 export const plans = [
-  {
-    name: "Mensal",
-    price: "R$ 25",
-    period: "/mês",
-    description: "Servidor estável para sua primeira experiência digital.",
-    features: [
-      "Acesso completo",
-      "Mais de 8.000 canais ao vivo",
-      "Filmes e séries sob demanda",
-      "Qualidade HD e Full HD",
-      "Suporte por WhatsApp",
-    ],
-    highlighted: false,
-  },
-  {
-    name: "Trimestral",
-    price: "R$ 75",
-    period: "/3 meses",
-    description: "Alta performance com bônus especial de 4 meses.",
-    features: [
-      "1 mês de bônus incluso",
-      "Total de 4 meses de serviço",
-      "Qualidade 4K e Full HD",
-      "Catálogo completo",
-      "Canais de esportes e PPV",
-      "Suporte prioritário 24h",
-    ],
-    highlighted: true,
-  },
-  {
-    name: "Anual",
-    price: "R$ 200",
-    period: "/ano",
-    description: "Infraestrutura completa para 12 meses de estabilidade.",
-    features: [
-      "Economia máxima",
-      "12 meses garantidos",
-      "Tudo liberado em 4K",
-      "Instalação assistida gratuita",
-      "Garantia de estabilidade",
-    ],
-    highlighted: false,
-  },
+  { name: "Mensal", price: "R$ 25", period: "/mês", description: "Plano IPTV mensal.", message: "Olá! Conheci a Leão Play pelo site e tenho interesse no plano mensal IPTV. Gostaria de confirmar o valor para meu aparelho." },
+  { name: "Trimestral", price: "R$ 75", period: "/3 meses", description: "Preço-base do período IPTV.", message: "Olá! Conheci a Leão Play pelo site e tenho interesse no plano trimestral IPTV. Gostaria de confirmar as condições e o valor final." },
+  { name: "Anual", price: "R$ 200", period: "/ano", description: "Preço-base do período IPTV.", message: "Olá! Conheci a Leão Play pelo site e tenho interesse no plano anual IPTV. Gostaria de confirmar as condições e o valor final." },
 ];
 
 export function PlansGrid() {
   return (
     <div className="grid gap-6 md:grid-cols-3">
       {plans.map((plan) => (
-        <div
-          key={plan.name}
-          className={`relative flex flex-col rounded-3xl p-7 transition-transform hover:-translate-y-1 ${
-            plan.highlighted
-              ? "border border-primary/50 bg-card shadow-glow"
-              : "glass-panel shadow-soft"
-          }`}
-        >
-          {plan.highlighted && (
-            <span className="absolute -top-3 left-7 inline-flex items-center gap-1 rounded-full bg-highlight px-3 py-1 text-xs font-bold text-highlight-foreground">
-              <Sparkles className="size-3" /> Mais vendido
-            </span>
-          )}
+        <div key={plan.name} className="glass-panel flex flex-col rounded-3xl p-7 shadow-soft">
           <h3 className="font-display text-xl font-bold">{plan.name}</h3>
           <p className="mt-1 text-sm text-muted-foreground">{plan.description}</p>
           <p className="mt-5 flex items-end gap-1">
@@ -72,24 +20,11 @@ export function PlansGrid() {
             <span className="pb-1 text-sm text-muted-foreground">{plan.period}</span>
           </p>
           <ul className="mt-6 flex-1 space-y-3 text-sm">
-            {plan.features.map((f) => (
-              <li key={f} className="flex items-start gap-2">
-                <Check className="mt-0.5 size-4 shrink-0 text-primary" />
-                <span className="text-muted-foreground">{f}</span>
-              </li>
-            ))}
+            <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-primary" /><span className="text-muted-foreground">Opção IPTV para aparelhos compatíveis</span></li>
+            <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-primary" /><span className="text-muted-foreground">Valor final da primeira contratação confirmado no atendimento</span></li>
           </ul>
-          <Button
-            asChild
-            className={`mt-7 ${
-              plan.highlighted
-                ? "bg-brand-gradient text-primary-foreground"
-                : "bg-secondary text-secondary-foreground hover:bg-accent"
-            }`}
-          >
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-              Assinar {plan.name}
-            </a>
+          <Button asChild className="mt-7 bg-brand-gradient text-primary-foreground">
+            <a href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent(plan.message)}`} target="_blank" rel="noopener noreferrer">Consultar {plan.name}</a>
           </Button>
         </div>
       ))}
