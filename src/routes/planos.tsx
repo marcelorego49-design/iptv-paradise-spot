@@ -32,8 +32,7 @@ function PlanosPage() {
             Escolha o plano ideal
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Todos os planos incluem canais ao vivo, filmes, séries, esportes e suporte no
-            WhatsApp. Pagamento via Pix ou cartão, sem fidelidade.
+            Conheça as opções do ecossistema Leão Play, com biblioteca de aplicativos e suporte pelo WhatsApp. A disponibilidade e o funcionamento dos apps variam conforme o sistema operacional e a compatibilidade do dispositivo.
           </p>
         </div>
       </section>

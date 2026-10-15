@@ -12,9 +12,9 @@ import {
 } from "@/components/ui/accordion";
 import heroImg from "@/assets/hero-tv.jpg";
 
-const title = "Leão Play — Ecossistema de Entretenimento e Biblioteca de Apps";
+const title = "Leão Play — Sua central de entretenimento e biblioteca de apps";
 const description =
-  "A Leão Play é uma solução profissional multiplataforma com infraestrutura de servidores robusta e biblioteca de aplicativos para Smart TVs, celulares e notebooks.";
+  "Conheça o ecossistema Leão Play: infraestrutura profissional de servidores e biblioteca de aplicativos para Smart TVs, celulares, tablets e notebooks compatíveis.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,9 +31,9 @@ export const Route = createFileRoute("/")({
 });
 
 const features = [
-  { icon: Clapperboard, title: "Entretenimento organizado", text: "Canais ao vivo, filmes e séries, conforme a opção disponível." },
-  { icon: Smartphone, title: "Diferentes dispositivos", text: "Alternativas de aplicativos para aparelhos compatíveis." },
-  { icon: MessageCircle, title: "Atendimento personalizado", text: "Orientação para escolher a opção adequada e começar a utilizar." },
+  { icon: Clapperboard, title: "Biblioteca de aplicativos", text: "Opções de apps para acessar canais ao vivo, filmes e séries em dispositivos compatíveis." },
+  { icon: Zap, title: "Infraestrutura profissional", text: "Servidores robustos para uma experiência estável em diferentes aparelhos e sistemas." },
+  { icon: Smartphone, title: "Ecossistema multiplataforma", text: "Alternativas para Smart TVs, celulares, tablets e notebooks, conforme a compatibilidade." },
 ];
 
 const steps = [
@@ -61,7 +61,7 @@ function Index() {
             </span>
           </div>
           <h1 className="col-start-1 row-start-2 mt-5 min-w-0 self-center font-display text-[1.35rem] font-extrabold leading-[1.1] sm:text-3xl md:text-4xl lg:row-start-2 lg:text-6xl lg:leading-[1.05]">
-            Seu entretenimento, do seu jeito.
+            Sua central definitiva de entretenimento.
           </h1>
           <div className="col-start-2 row-start-2 mt-5 flex min-w-0 items-center justify-center self-center lg:row-span-4 lg:row-start-1 lg:mt-0">
             <img
@@ -74,7 +74,7 @@ function Index() {
           </div>
           <div className="col-span-2 min-w-0 lg:col-span-1 lg:col-start-1 lg:row-start-3">
             <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-              Canais ao vivo, filmes e séries em aplicativos para diferentes dispositivos. Conheça as opções da Leão Play e conte com nosso atendimento para começar.
+              Um ecossistema de entretenimento com biblioteca de aplicativos e infraestrutura profissional para Smart TVs, celulares, tablets e notebooks. A disponibilidade dos apps varia conforme o sistema operacional e a compatibilidade do dispositivo.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="bg-brand-gradient text-primary-foreground shadow-glow">
@@ -123,7 +123,7 @@ function Index() {
       <section className="mx-auto max-w-6xl px-4 py-20">
         <h2 className="font-display text-3xl font-bold md:text-4xl">Por que escolher o Leão Play</h2>
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          Estrutura própria, catálogo atualizado e atendimento que responde de verdade.
+          Biblioteca de apps, infraestrutura robusta e atendimento para ajudar você a escolher a opção compatível com seu dispositivo.
         </p>
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {features.map(({ icon: Icon, title: t, text }) => (

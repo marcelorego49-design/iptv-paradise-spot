@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 import { WHATSAPP_BASE_URL } from "@/components/site-layout";
 
 export const plans = [
-  { name: "Mensal", price: "R$ 25", period: "/mês", description: "Plano IPTV mensal.", message: "Olá! Conheci a Leão Play pelo site e tenho interesse no plano mensal IPTV. Gostaria de confirmar o valor para meu aparelho." },
-  { name: "Trimestral", price: "R$ 75", period: "/3 meses", description: "Preço-base do período IPTV.", message: "Olá! Conheci a Leão Play pelo site e tenho interesse no plano trimestral IPTV. Gostaria de confirmar as condições e o valor final." },
-  { name: "Anual", price: "R$ 200", period: "/ano", description: "Preço-base do período IPTV.", message: "Olá! Conheci a Leão Play pelo site e tenho interesse no plano anual IPTV. Gostaria de confirmar as condições e o valor final." },
+  { name: "Mensal", price: "R$ 25", period: "/mês", description: "Acesso mensal à opção compatível com seu aparelho.", message: "Olá! Conheci a Leão Play pelo site e tenho interesse no plano mensal IPTV. Gostaria de confirmar o valor para meu aparelho." },
+  { name: "Trimestral", price: "R$ 75", period: "/3 meses", description: "Opção trimestral; confirme compatibilidade e valor final.", message: "Olá! Conheci a Leão Play pelo site e tenho interesse no plano trimestral IPTV. Gostaria de confirmar as condições e o valor final." },
+  { name: "Anual", price: "R$ 200", period: "/ano", description: "Opção anual; confirme compatibilidade e valor final.", message: "Olá! Conheci a Leão Play pelo site e tenho interesse no plano anual IPTV. Gostaria de confirmar as condições e o valor final." },
 ];
 
 export function PlansGrid() {
